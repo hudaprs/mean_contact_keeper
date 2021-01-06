@@ -1,0 +1,36 @@
+<form (ngSubmit)="onSubmit()">
+  <h2 class="text-primary">Label Here</h2>
+  <input type="text" name="name" placeholder="Name" [(ngModel)]="name" />
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="email" />
+  <input type="text" name="phone" placeholder="Phone" [(ngModel)]="phone" />
+  <h5>Contact Type</h5>
+  <input
+    type="radio"
+    name="type"
+    value="personal"
+    [checked]="type === 'personal'"
+    [(ngModel)]="type"
+  />
+  Personal
+  <input
+    type="radio"
+    name="type"
+    value="professional"
+    [checked]="type === 'professional'"
+    [(ngModel)]="type"
+  />
+  Professional
+  <div>
+    <button
+      type="submit"
+      class="btn btn-primary btn-block"
+      [disabled]="loading"
+    >
+      <em *ngIf="loading" class="fas fa-circle-notch fa-spin"></em>
+      Add Contact
+    </button>
+  </div>
+  <div *ngIf="current">
+    <button type="button" class="btn btn-light btn-block my-1">Clear</button>
+  </div>
+</form>

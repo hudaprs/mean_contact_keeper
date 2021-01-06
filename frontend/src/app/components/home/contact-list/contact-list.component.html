@@ -1,0 +1,25 @@
+<div *ngFor="let contact of contacts">
+  <div class="card bg-light">
+    <h3 class="text-primary text-left">
+      {{ contact.name }}
+      <em style="float: right"> {{ contact.type }} </em>
+    </h3>
+    <ul class="list">
+      <li *ngIf="contact.email">
+        <em class="fas fa-envelope-open"></em> {{ contact.email }}
+      </li>
+      <li *ngIf="contact.phone">
+        <em class="fas fa-phone"></em> {{ contact.phone }}
+      </li>
+    </ul>
+    <p>
+      <button
+        type="button"
+        class="btn btn-danger btn-sm"
+        (click)="onDelete(contact._id)"
+      >
+        Delete
+      </button>
+    </p>
+  </div>
+</div>

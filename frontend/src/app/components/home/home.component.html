@@ -1,0 +1,16 @@
+<div class="grid-2">
+  <div>
+    <app-contact-form></app-contact-form>
+  </div>
+  <div>
+    <app-contact-filter></app-contact-filter>
+    <div
+      *ngIf="loading"
+      class="fa-3x text-center"
+      style="margin: auto; display: block"
+    >
+      <em class="fas fa-circle-notch fa-spin"></em>
+    </div>
+    <app-contact-list [contacts]="contacts"></app-contact-list>
+  </div>
+</div>

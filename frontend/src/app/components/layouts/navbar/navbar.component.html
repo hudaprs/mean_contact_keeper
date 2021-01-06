@@ -1,0 +1,27 @@
+<div class="navbar bg-primary">
+  <h1>
+    <em class="fas fa-id-card-alt"></em><a routerLink="/"> Contact Keeper</a>
+  </h1>
+
+  <ul>
+    <!-- !Authenticated Links -->
+
+    <li *ngIf="!isAuthenticated">
+      <a routerLink="/login">Login</a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a routerLink="/register">Register</a>
+    </li>
+
+    <!-- Authenticated Links -->
+    <li *ngIf="isAuthenticated">
+      <p>Hello {{ auth.name }}</p>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a style="cursor: pointer" (click)="onLogout()">
+        <em class="fas fa-sign-out-alt"></em>
+        <span class="hide-sm">Logout</span>
+      </a>
+    </li>
+  </ul>
+</div>
